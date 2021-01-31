@@ -1,0 +1,46 @@
+﻿@model AssesmentTask.Models.Employee
+@{
+    ViewData["Title"] = "Create Employee";
+}
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4">
+            <form class="form-row" asp-action="Index">
+                <div class="form-group">
+                    <label class="col-form-label">Employee No</label>
+                    <input asp-for="EmpNo" class="form-control" type="text" />
+                    <span asp-validation-for="EmpNo" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label class="col-form-label">First Name</label>
+                    <input asp-for="FirstName" class="form-control" type="text" />
+                    <span asp-validation-for="FirstName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label class="col-form-label">Last Name</label>
+                    <input asp-for="LastName" class="form-control" type="text" />
+                    <span asp-validation-for="LastName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label class="col-form-label">Email</label>
+                    <input asp-for="Email" class="form-control" type="text" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Submit" />
+                </div>
+            </form>
+
+        </div>
+        <div class="col-sm-4"></div>
+    </div>
+</div>
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+

@@ -1,0 +1,49 @@
+﻿@model IEnumerable<AssesmentTask.Models.Employee>
+
+@{
+    ViewData["Title"] = "Dash Board";
+}
+<div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4">
+                <a href="Employee/CreateEmp">Create</a>
+            </div>
+            <div class="col-sm-4">
+                <form class="form-row">                    
+                    <div>
+                        
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th class="col">ID</th>
+                                    <th class="col">First Name</th>
+                                    <th class="col">Last Name</th>
+                                    <th class="col">Email</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach(var e in Model)
+                                {
+                                <tr>
+                                    <td class="col">@e.EmpNo</td>
+                                    <td class="col">@e.FirstName</td>
+                                    <td class="col">@e.LastName</td>
+                                    <td class="col">@e.Email</td>
+                                    <td class="col">
+                                        <a asp-action="EditEmp" asp-route-id="@e.EmpNo">Edit</a> |
+                                        <a asp-action="DeleteEmp" asp-route-id="@e.EmpNo">Delete</a>
+                                    </td>
+                                </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </form>
+
+            </div>
+            <div class="col-sm-4"></div>
+        </div>
+    </div>
+
+</div>
